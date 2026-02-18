@@ -10,7 +10,7 @@
 
 ## Архитектура
 
-Клиент → Django → FastAPI → YandexGPT
+Клиент → Django (бэкенд) → FastAPI (AI микросервис) → YandexGPT
 
 -   **Django** отвечает за работу с пользователями, заметками, аутентификацией и бизнес-логикой.
 -   **FastAPI** отвечает за обработку данных с помощью ИИ и взаимодействие с YandexGPT.
@@ -94,7 +94,7 @@ Response:
 
 ``` json
 {
-  "summary": "Краткое резюме заметки"
+  "summary": "Краткое изложение основных мыслей"
 }
 ```
 
@@ -112,13 +112,12 @@ Response:
 
 ## Стек
 
--   Python
--   Django
--   Django REST Framework
--   FastAPI
--   YandexGPT
--   HTTPX / Requests
--   Docker (planned)
+- Python 3.10+
+- Django + Django REST Framework
+- FastAPI + Uvicorn
+- YandexGPT API
+- HTTPX / Requests
+- Docker (в планах)
 
 ------------------------------------------------------------------------
 
@@ -133,11 +132,13 @@ Response:
 
 ------------------------------------------------------------------------
 
-## Будущие улучшения
+## Планы по развитию
 
-- PostgreSQL вместо SQLite
-- Докеризованное развертывание
-- Аутентификация с помощью JWT
-- Интеграция с интерфейсом
-- Ограничение скорости запросов AI
+- Переход на PostgreSQL
+- Docker-контейнеризация
+- JWT аутентификация
+- Frontend на React/Vue
+- Rate limiting для AI запросов
+- Кэширование результатов
+
 
