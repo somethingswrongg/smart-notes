@@ -5,27 +5,27 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-YANDEX_API_KEY = os.getenv("YANDEX_API_KEY")
-YANDEX_FOLDER_ID = os.getenv("YANDEX_FOLDER_ID")
+API_KEY = os.getenv("YANDEX_API_KEY")
+FOLDER_ID = os.getenv("YANDEX_FOLDER_ID")
 
 YANDEX_URL = "https://llm.api.cloud.yandex.net/foundationModels/v1/completion"
 
 
 async def summarize_text(text: str) -> str:
     headers = {
-        "Authorization": f"Api-Key {YANDEX_API_KEY}",
+        "Authorization": f"Api-Key {API_KEY}",
         "Content-Type": "application/json",
     }
 
     payload = {
-        "modelUri": f"gpt://{YANDEX_FOLDER_ID}/yandexgpt/latest",
+        "modelUri": f"gpt://{FOLDER_ID}/yandexgpt/latest",
         "completionOptions": {
             "stream": False,
-            "temperature": 0.1,
-            "maxTokens": 2000,
+            "temperature": 0.3,
+            "maxTokens": 200,
         },
         "messages": [
-            {"role": "system", "text": "Ответ давай подробно, как будто ты преподаватель в институте"},
+            {"role": "system", "text": "Кратко резюмируй текст"},
             {"role": "user", "text": text},
         ],
     }

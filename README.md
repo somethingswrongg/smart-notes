@@ -104,8 +104,8 @@ Response:
 
 ### AI Service (.env)
 
-    YANDEX_API_KEY=your_api_key
-    YANDEX_FOLDER_ID=your_folder_id
+    API_KEY=your_api_key
+    FOLDER_ID=your_folder_id
 
     так же в файле ai-snippets.py есть примеры подключения других ai-сервисов
 ------------------------------------------------------------------------

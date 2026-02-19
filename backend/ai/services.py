@@ -1,6 +1,8 @@
+import os
+
 import httpx
 
-AI_SERVICE_URL = "http://127.0.0.1:8001"
+AI_SERVICE_URL = os.getenv("AI_SERVICE_URL", "http://ai_service:8001")
 
 
 def summarize_text(text: str):
