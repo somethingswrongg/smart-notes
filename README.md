@@ -28,31 +28,6 @@
 
 ------------------------------------------------------------------------
 
-## Структура проекта
-
-    project_root/
-    │
-    ├── backend/        # Django project
-    │   ├── apps/
-    │   ├── config/
-    │   ├── manage.py
-    │   ├── requirements.txt
-    │   └── .env
-    │
-    ├── ai_service/     # FastAPI AI microservice
-    │   ├── app/
-    │   │   ├── main.py
-    │   │   ├── services.py
-    │   │   ├── schemas.py
-    │   │   └── config.py
-    │   ├── requirements.txt
-    │   └── .env
-    │
-    ├── docker-compose.yml (optional)
-    └── README.md
-
-------------------------------------------------------------------------
-
 ## Локальный запуск
 
 ### 1️⃣ Django Backend
@@ -140,5 +115,6 @@ Response:
 - Frontend на React/Vue
 - Rate limiting для AI запросов
 - Кэширование результатов
+
 
 
