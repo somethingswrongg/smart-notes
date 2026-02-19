@@ -1,16 +1,20 @@
 import os
-
 import httpx
 
-AI_SERVICE_URL = os.getenv("AI_SERVICE_URL", "http://ai_service:8001")
+INTERNAL_API_TOKEN = os.getenv("INTERNAL_API_TOKEN")
 
+def summarize_text(text: str) -> str:
+    if not INTERNAL_API_TOKEN:
+        raise RuntimeError("INTERNAL_API_TOKEN is not set")
 
-def summarize_text(text: str):
     response = httpx.post(
-        f"{AI_SERVICE_URL}/summarize",
+        "http://ai_service:8001/summarize",
         json={"text": text},
-        timeout=30.0
+        headers={
+            "X-Internal-Token": INTERNAL_API_TOKEN
+        },
+        timeout=10,
     )
 
     response.raise_for_status()
-    return response.json()
+    return response.json()["summary"]

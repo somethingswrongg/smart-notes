@@ -21,14 +21,21 @@ from rest_framework_simplejwt.views import (
     TokenRefreshView,
 )
 
+from django.http import JsonResponse
+
 from apps.users.views import EmailTokenObtainPairView
 
+from .views import index
+
+def health_check(request):
+    return JsonResponse({"status": "healthy", "service": "django"})
 
 urlpatterns = [
+    path("", index),
     path("admin/", admin.site.urls),
-
     # JWT
     path("api/token/", TokenObtainPairView.as_view(), name="token_obtain_pair"),
+    path('api/health/', health_check, name='health'),
     path("api/token/", EmailTokenObtainPairView.as_view(), name="token_obtain_pair"),
     path("api/token/refresh/", TokenRefreshView.as_view(), name="token_refresh"),
     path("api/ai/", include("ai.urls")),

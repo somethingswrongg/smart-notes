@@ -11,6 +11,10 @@ FOLDER_ID = os.getenv("YANDEX_FOLDER_ID")
 YANDEX_URL = "https://llm.api.cloud.yandex.net/foundationModels/v1/completion"
 
 
+class AIProviderError(Exception):
+    """Ошибка внешнего AI-провайдера"""
+    pass
+
 async def summarize_text(text: str) -> str:
     headers = {
         "Authorization": f"Api-Key {API_KEY}",
@@ -21,8 +25,8 @@ async def summarize_text(text: str) -> str:
         "modelUri": f"gpt://{FOLDER_ID}/yandexgpt/latest",
         "completionOptions": {
             "stream": False,
-            "temperature": 0.3,
-            "maxTokens": 200,
+            "temperature": 0.7,
+            "maxTokens": 1000,
         },
         "messages": [
             {"role": "system", "text": "Кратко резюмируй текст"},
@@ -39,5 +43,3 @@ async def summarize_text(text: str) -> str:
         raise Exception(f"YandexGPT error: {data}")
 
     return data["result"]["alternatives"][0]["message"]["text"]
-
-

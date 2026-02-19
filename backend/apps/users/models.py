@@ -39,3 +39,10 @@ class User(AbstractBaseUser, PermissionsMixin):
 
     def __str__(self):
         return self.email
+
+
+class AIRequest(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    input_text = models.TextField()
+    summary = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
