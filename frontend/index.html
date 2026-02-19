@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Notes AI — умные заметки с искусственным интеллектом</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>
+                <span class="gradient-text">🧠 Smart Notes AI</span>
+            </h1>
+            <p class="subtitle">Краткое изложение ваших заметок с помощью ИИ</p>
+        </header>
+
+        <main>
+            <div class="card">
+                <label for="text" class="input-label">Введите текст для суммаризации:</label>
+                <textarea
+                    id="text"
+                    placeholder="Например: встреча с командой прошла продуктивно, обсудили планы на следующий спринт, решили добавить новую функцию в приложение..."
+                    rows="6"
+                ></textarea>
+
+                <button onclick="summarize()" id="summarizeBtn">
+                    <span class="btn-text">✨ Суммировать</span>
+                    <span class="btn-loader" style="display: none;">⏳</span>
+                </button>
+            </div>
+
+            <div id="result" class="result-card" style="display: none;">
+                <h2>📝 Результат</h2>
+                <div id="result-content"></div>
+            </div>
+        </main>
+
+        <footer>
+            <p>⚡ Работает на YandexGPT • <span id="status">сервер запущен</span></p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
