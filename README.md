@@ -69,7 +69,7 @@ Response:
 
 ``` json
 {
-  "summary": "Краткое изложение основных мыслей"
+  "summary": "Краткое изложение текста"
 }
 ```
 
@@ -115,6 +115,7 @@ Response:
 - Frontend на React/Vue
 - Rate limiting для AI запросов
 - Кэширование результатов
+
 
 
 
