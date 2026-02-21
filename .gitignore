@@ -1,7 +1,6 @@
-ai_service/.env
+.env
 ai_service/.venv
 .venv
-.env
 .env.local
 node_modules/
 vendor/

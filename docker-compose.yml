@@ -13,9 +13,8 @@ services:
     build: ./backend
     ports:
       - "8000:8000"
-    environment:
-      - AI_SERVICE_URL=http://ai_service:8001
-      - INTERNAL_API_TOKEN=${INTERNAL_API_TOKEN}
+    env_file:
+      - .env
     depends_on:
       - ai_service
 
@@ -23,10 +22,8 @@ services:
     build: ./ai_service
     ports:
       - "8001:8001"
-    environment:
-      - INTERNAL_API_TOKEN=${INTERNAL_API_TOKEN}
-      - API_KEY=${YANDEX_API_KEY}
-      - FOLDER_ID=${YANDEX_FOLDER_ID}
+    env_file:
+      - .env
     volumes:
       - ./ai_service:/app
     command: uvicorn app.main:app --host 0.0.0.0 --port 8001 --reload
