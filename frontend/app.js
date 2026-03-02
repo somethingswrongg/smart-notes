@@ -11,7 +11,7 @@ async function summarize() {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
-                'Authorization': `Bearer ${"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzcxNzQyNDUzLCJpYXQiOjE3NzE2NTYwNTMsImp0aSI6IjllZmE4MDZiZjc5MDRkNGZiMDUyY2IwNjVjZWI4MzBiIiwidXNlcl9pZCI6IjEifQ.PuVZ-hVIWJSQIPuENn6g9R3DuZ47uj68uH1AgivE1iA"}`
+                'Authorization': `Bearer ${"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzgwNDEyMTEyLCJpYXQiOjE3NzE3NzIxMTIsImp0aSI6Ijg2MmUxZDkxMmM2NjRiNTk5NzYxNWVkYzEwOGZlYWMyIiwidXNlcl9pZCI6IjEifQ.qvpTd5r4aZKTSAERUjDssECw9gJ8n7c_BjZDUr8Qf-c"}`
             },
             body: JSON.stringify({ text }),
         });

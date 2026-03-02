@@ -11,7 +11,7 @@ YANDEX_URL = "https://llm.api.cloud.yandex.net/foundationModels/v1/completion"
 
 
 class AIProviderError(Exception):
-    """Ошибка внешнего AI-провайдера"""
+    """Ошибка AI-провайдера"""
     pass
 
 async def summarize_text(text: str) -> str:
